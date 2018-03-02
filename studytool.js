@@ -6,6 +6,7 @@ var wgt;
 var matchToFind;
 
 
+//called at the beginning to get the XML document and load the dropdown list
 function getXML(document) {
     elementXML = document;
     getelements();
@@ -13,6 +14,7 @@ function getXML(document) {
 
 }
 
+//loads dropdown from XML file, sets text field to selected element, clears input boxes and sets text to black
 function getelements(){
 	var select = "<select name='element'>";
 	var elementname;
@@ -36,15 +38,16 @@ function getelements(){
 	$(this).find('#selectelement').text($(this).text());
 	lookUp($(this).text());
 	
-	//reset
+	//reset text field to empty
 	$("#element").val('');
+	$("#id").val('');
+	$("#number").val('');
+	$("#weight").val('');
+	
 	//change color back to black
 	$("#element").css('color','black');
-	$("#id").val('');
 	$("#id").css('color','black');
-	$("#number").val('');
 	$("#number").css('color','black');
-	$("#weight").val('');
 	$("#weight").css('color','black');
 
     });
@@ -52,8 +55,7 @@ function getelements(){
 }
 
 
-//create function that gets called when you click the randomize button, calls random function, gets a number back, then causes the menu to be selected to something
-
+//looks up information on the selected element
 function lookUp(){
 	    console.log("called");
 	    $("#content").empty();
@@ -70,6 +72,9 @@ function lookUp(){
 
 }
 
+//displays the correct answers corresponding to that element
+//if correct, input turns green
+//in incorrect, input turns red
 function showSolution(){
 	console.log(sym);
 	console.log(num);
