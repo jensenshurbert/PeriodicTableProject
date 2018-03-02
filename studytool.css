@@ -1,0 +1,21 @@
+body {
+	background-color: CadetBlue;
+}
+
+h1 {
+	text-align: center;
+}
+
+button {
+	float: right;
+	padding: 1em;
+	border-radius: 12px;
+}
+
+.border {
+	padding: 2em;
+}
+
+.borderoutline {
+	border-style: solid;
+}
